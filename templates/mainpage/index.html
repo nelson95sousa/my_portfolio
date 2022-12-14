@@ -1,0 +1,64 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active"><a href="{% url 'portfolio:panorama' %}">
+        <img src="{% static 'images/panorama/1.jpg' %}" class="d-block w-100" alt="..."></a>
+      </div>
+      <div class="carousel-item"><a href="{% url 'portfolio:panorama' %}">
+        <img src="{% static 'images/panorama/2.jpg' %}" class="d-block w-100" alt="..."></a>
+      </div>
+      <div class="carousel-item"><a href="{% url 'portfolio:panorama' %}">
+        <img src="{% static 'images/panorama/3.jpg' %}" class="d-block w-100" alt="..."></a>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container cont-cards">
+    <div class="row row-cols-4">
+        
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/cards/morning.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Nature</h5>
+            <p class="card-text">Some of the best nature pictures taken with different approaches.</p>
+            <a href="{% url 'portfolio:nature' %}" class="btn">Visit Gallery</a>
+            </div>
+        </div>
+    
+
+    
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/cards/river.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Long Exposure</h5>
+            <p class="card-text">This technique allow the user to capture the light for a longer period of time.</p>
+            <a href="{% url 'mainpage:long_exposure' %}" class="btn">Find out!</a>
+            </div>
+        </div>
+    
+
+    
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/cards/camera.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Gear</h5>
+            <p class="card-text">What has been used to capture the pictures on the portfolio?</p>
+            <a href="{% url 'mainpage:my_gear' %}" class="btn">Explore</a>
+            </div>
+        </div>
+       
+    </div>
+</div>
+{% endblock %}
+

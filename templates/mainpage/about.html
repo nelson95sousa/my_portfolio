@@ -1,0 +1,31 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container about-cont">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="about-h1">PHOTOGRAPHY</h1>
+                <p>Photography has inspired me since I was a child,
+                    from the old albuns and my first
+                    smartphone with 14Megapixels camera!!
+                </p>
+                <p>
+                Coming from the countryside in north Portugal,
+                the beauty of the landscapes, the wide sky horizon and
+                the details of the nature in the cultivated fields have helped 
+                me to develop the ability to catch good memories in frame.
+                </p> 
+            </div>
+
+            <div class="col">
+                <img class="about-img" src="{% static 'images/about.jpg' %}" alt="">
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock %}
+

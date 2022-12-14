@@ -1,0 +1,102 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <nav >
+        <ul class="pagination portfolio-cat justify-content-center">
+            {% if category == 'CITY' %}
+                <li class="page-item me-auto"><a class="page-link" href="{% url 'portfolio:long_exposure' %}">&lt</a></li>
+                <li class="page-item"><h1 class="portfolio-cat item-cat">{{category}}</h1></li>
+                <li class="page-item ms-auto"><a class="page-link" href="{% url 'portfolio:nature' %}">&gt</a></li>
+
+            {% elif category == 'NATURE' %}
+                <li class="page-item me-auto"><a class="page-link" href="{% url 'portfolio:city' %}">&lt</a></li>
+                <li class="page-item"><h1 class="portfolio-cat item-cat">{{category}}</h1></li>
+                <li class="page-item ms-auto"><a class="page-link" href="{% url 'portfolio:panorama' %}">&gt</a></li>
+            
+            {% elif category == 'PANORAMA' %}
+                <li class="page-item me-auto"><a class="page-link" href="{% url 'portfolio:nature' %}">&lt</a></li>
+                <li class="page-item"><h1 class="portfolio-cat item-cat">{{category}}</h1></li>
+                <li class="page-item ms-auto"><a class="page-link" href="{% url 'portfolio:long_exposure' %}">&gt</a></li>
+            
+            {% elif category == 'LONG EXPOSURE' %}
+                <li class="page-item me-auto"><a class="page-link" href="{% url 'portfolio:panorama' %}">&lt</a></li>
+                <li class="page-item"><h1 class="portfolio-cat item-cat">{{category}}</h1></li>
+                <li class="page-item ms-auto"><a class="page-link" href="{% url 'portfolio:city' %}">&gt</a></li>
+            
+            
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% if category == 'PANORAMA' %}
+        
+        <div class="container-fluid">
+            {% for n in img%}
+                <div class="row row-pn">
+                    <img class="myImg img-fluid img-pn img-responsive" src="{{n.image.url}}" alt=""></a>
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                            <!-- The Close Button -->
+                            <span class="close">&times;</span>
+                        
+                            <!-- Modal Content (The Image) -->
+                            <img class="modal-content" id="img01">
+                        
+                            <!-- Modal Caption (Image Text) -->
+                            <div id="caption"></div>
+                        </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+
+        <div class="container-fluid">
+                <div class="row">
+                    
+                    {% for n in img%}
+                        <div class="col-md-4">
+                            <img class="myImg img-fluid img-responsive" src="{{n.image.url}}" alt=""></a>
+                            
+                            <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                    <!-- The Close Button -->
+                                    <span class="close">&times;</span>
+                                
+                                    <!-- Modal Content (The Image) -->
+                                    <img class="modal-content" id="img01">
+                                
+                                    <!-- Modal Caption (Image Text) -->
+                                    <div id="caption"></div>
+                                </div>
+                        </div>
+                    {% endfor %}
+                </div>
+        </div>
+    {% endif %}
+
+    
+    
+    
+
+    <div class="col-md-4">
+        <img class="img-fluid img-responsive" src="{{n.image.url}}" alt=""></a>
+        </a>
+    </div>
+   
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+
+    <script src="{% static 'JS/portfolio.js' %}"></script>
+</div>
+{% endblock %}
+
+

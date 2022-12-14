@@ -1,0 +1,23 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container ctn-pp">
+    <h1>Post Processing</h1>
+    <p>The Post Processing gives us the opportunity to edit the images/photos with the intention of make it
+        look as closer as possible of the image the photographer saw the frame in reality.
+    </p>
+</div>
+<div class="container">
+    <div class="row row-lr">
+        <div class="col-8">
+            <h2>Lightroom</h2>
+            <p>For post production, I use the Lightroom free version for <a class="lr-link" href="https://play.google.com/store/apps/details?id=com.adobe.lrmobile" target="_blank">android</a> and <a class="lr-link" href="https://apps.apple.com/us/app/adobe-photoshop-lightroom/id878783582" target="_blank">iOS</a> devices.</p>
+        </div>
+        <div class="col-4 lr-logo-col">
+            <img class="lr-logo" src="{% static 'images/lr_logo.png' %}" alt="">
+        </div>
+</div>
+</div>
+{% endblock %}
+
