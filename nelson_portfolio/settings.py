@@ -26,7 +26,7 @@ SECRET_KEY =
 DEBUG = False
 
 ALLOWED_HOSTS = []
-# '192.168.1.28'
+# 
 
 # Application definition
 
